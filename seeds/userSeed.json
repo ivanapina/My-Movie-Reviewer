@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Brad Pitt",
+        "email": "BPStar@hotmail.com",
+        "password": "password1"
+    },
+    {
+        "name": "Maria Roberts",
+        "email":"mb2@hotmail.com",
+        "password": "password2"
+    },
+    {
+        "name": "Ryan Gosling",
+        "email": "rg3@outlook.com",
+        "password": "password3"
+    }
+]
