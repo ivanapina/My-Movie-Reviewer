@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Comment extends Model {}
 
@@ -11,19 +11,28 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
+    body: {
+      type: DataTypes.TEXT,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.STRING,
+    created_on: {
+      type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
-    movies_id: {
+    // TODO verify whether we need to implement a unique key (guid) for each Comment
+    post_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'movies',
-        key: 'id',
+        model: "post",
+        key: "id",
+      },
+    },
+    created_by: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "bot",
+        key: "id",
       },
     },
   },
@@ -31,7 +40,7 @@ Comment.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment',
+    modelName: "Comment",
   }
 );
 

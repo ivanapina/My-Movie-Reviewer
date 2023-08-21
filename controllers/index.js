@@ -1,7 +1,9 @@
-const router = require('express').Router()
-const movieRoutes = require('./api/movieRoutes') 
-const userRoutes = require('./api/userRoutes')
-const commentRoutes = require('./api/commentRoutes') 
+const router = require('express').Router();
 
-router.use('/', movieRoutes, userRoutes, commentRoutes )
-module.exports = router
+const apiRoutes = require('./api');
+const homeRoutes = require('./home-routes.js');
+
+router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
+
+module.exports = router;

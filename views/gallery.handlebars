@@ -1,16 +1,17 @@
-<div class="row row-cols-3 g-3 justify-content-center">
-    {{#each movies as | movie|}} 
+<section class="container">
+  <section class="flex-row justify-center">
+  {{#each movies as | movie|}} 
       <div class="row">
           <div class="card">
             <h4 class="card-header">{{movie.title}} </h4>
              <div class="card-body">
                 <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}"  class="card-img-top"/>
               <p class="card-text"><div>{{movie.overview}}</div>
-                <a href="/page"><button class="btn btn-primary btn-block">Review this movie</button></a>
+                <a class="btn btn-primary" href="/user/login" role="button">Review this movie</a>
+                
                </div>
                </div>
                </div>
 {{/each}}
-</div>
-</div>
-</div>
+  </section>
+</section>
